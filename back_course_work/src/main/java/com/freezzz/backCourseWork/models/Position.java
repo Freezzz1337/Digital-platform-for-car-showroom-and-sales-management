@@ -9,9 +9,9 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity()
+@Entity
 @Table(name = "position")
-public class Position {
+public class Position{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

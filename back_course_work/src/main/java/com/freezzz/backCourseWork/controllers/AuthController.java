@@ -17,7 +17,6 @@ public class AuthController {
 
     @Autowired
     public AuthController(WorkerService workerService) {
-
         this.workerService = workerService;
     }
 
@@ -27,37 +26,3 @@ public class AuthController {
         return ResponseEntity.ok(role);
     }
 }
-
-
-//@RestController
-//@RequestMapping("/auth")
-//public class AuthController {
-//    private final AuthenticationManager authenticationManager;
-//    private final WorkerService workerService;
-//
-//    @Autowired
-//    public AuthController(AuthenticationManager authenticationManager, WorkerService workerService) {
-//        this.authenticationManager = authenticationManager;
-//        this.workerService = workerService;
-//    }
-//
-//    @PostMapping("/login")
-//    public ResponseEntity<String> login(@RequestBody LoginDTO loginDTO, HttpSession session) {
-//        try {
-//            Authentication authentication = authenticationManager.authenticate(
-//                    new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword())
-//            );
-//
-//            SecurityContextHolder.getContext().setAuthentication(authentication);
-//            String role = workerService.getRole(loginDTO);
-//
-//
-//            session.setAttribute("role", role);
-//
-//
-//            return ResponseEntity.ok(role);
-//        } catch (AuthenticationException e) {
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-//        }
-//    }
-//}

@@ -83,7 +83,7 @@ function SalesAddManagement() {
     return (
         <Container>
             <h1>Підтвердження покупки:</h1>
-            <Form method="post" encType="multipart/form-data" onSubmit={handleSubmit}>
+            <Form method="post" encType="multipart/form-data" onSubmit={handleSubmit} id="salesForm">
 
                 <Form.Group className="mb-3" controlId="car">
                     <Form.Label>Авто:</Form.Label>
@@ -112,7 +112,7 @@ function SalesAddManagement() {
                         <Button variant="secondary" onClick={handleClose}>
                             Скасувати
                         </Button>
-                        <Button variant="primary" type="button" onSubmit={handleSubmit}>
+                        <Button variant="primary" type="submit" form="salesForm">
                             Підтвердити
                         </Button>
                     </Modal.Footer>
